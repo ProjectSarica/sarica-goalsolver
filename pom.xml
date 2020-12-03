@@ -16,6 +16,13 @@
         <maven.compiler.target>13</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
@@ -39,6 +46,13 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
+        <!-- https://github.com/ProjectSarica/connectionlib4j -->
+        <!-- <dependency>
+            <groupId>com.github.ProjectSarica</groupId>
+            <artifactId>connectionlib4j</artifactId>
+            <version>-SNAPSHOT</version>
+        </dependency> -->
     </dependencies>
 
     <build>
