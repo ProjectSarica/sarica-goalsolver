@@ -5,15 +5,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-
-import org.apache.log4j.Logger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Attempts to solve tasks by distributing them to various task handlers based
  * on heuristic estimates.
  */
 public class GoalSolver {
-    private static final Logger log = Logger.getLogger(GoalSolver.class);
+    private static final Logger log = java.util.logging.Logger.getLogger(GoalSolver.class.getName());
 
     private final List<TaskHandler> taskHandlers = Collections.synchronizedList(new ArrayList<>());
 
@@ -50,11 +50,11 @@ public class GoalSolver {
             try {
                 return h.execute(task).get();
             } catch (InterruptedException e) {
-                log.error("Failed to retrieve heuristic from task handler! Thread interrupted!", e);
+                log.log(Level.SEVERE, "Failed to retrieve heuristic from task handler! Thread interrupted!", e);
                 Thread.currentThread().interrupt();
                 return new TaskResults(false);
             } catch (ExecutionException e) {
-                log.error("Failed to handle task!", e);
+                log.log(Level.SEVERE, "Failed to handle task!", e);
                 return new TaskResults(false);
             }
         });
@@ -79,11 +79,11 @@ public class GoalSolver {
                 try {
                     h = heuristicFuture.get();
                 } catch (InterruptedException e) {
-                    log.error("Failed to retrieve heuristic from task handler! Thread interrupted!", e);
+                    log.log(Level.SEVERE, "Failed to retrieve heuristic from task handler! Thread interrupted!", e);
                     Thread.currentThread().interrupt();
                     continue;
                 } catch (ExecutionException e) {
-                    log.error("Failed to retrieve heuristic from task handler!", e);
+                    log.log(Level.SEVERE, "Failed to retrieve heuristic from task handler!", e);
                     continue;
                 }
 
