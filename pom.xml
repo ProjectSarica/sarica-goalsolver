@@ -47,12 +47,12 @@
             <version>1.2.17</version>
         </dependency>
 
-        <!-- https://github.com/ProjectSarica/connectionlib4j -->
-        <!-- <dependency>
-            <groupId>com.github.ProjectSarica</groupId>
-            <artifactId>connectionlib4j</artifactId>
-            <version>-SNAPSHOT</version>
-        </dependency> -->
+        <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.59.Final</version>
+        </dependency>
     </dependencies>
 
     <build>
