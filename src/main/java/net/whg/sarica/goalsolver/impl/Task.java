@@ -1,4 +1,4 @@
-package net.wraithavengames.sarica.goalsolver.impl;
+package net.whg.sarica.goalsolver.impl;
 
 /**
  * A specific task to be preformed.

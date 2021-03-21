@@ -1,4 +1,4 @@
-package net.wraithavengames.sarica.goalsolver.impl;
+package net.whg.sarica.goalsolver.impl;
 
 /**
  * A task type defines a definition for a unique task of task that needs to be

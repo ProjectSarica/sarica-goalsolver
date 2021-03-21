@@ -1,4 +1,4 @@
-package net.wraithavengames.sarica.goalsolver.impl;
+package net.whg.sarica.goalsolver.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
